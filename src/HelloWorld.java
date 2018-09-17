@@ -9,6 +9,11 @@ public class HelloWorld {
         System.out.println(myString);
         double myNumber = 3.14;
         System.out.println(myNumber);
+
+//        String theNumberThree = "three";
+//        Object o = theNumberThree;
+//        int three = (int) o;
+//        int three = (int) "three";
 //        int x = 5;
 //        System.out.println(x++);
 //        System.out.println(x);
