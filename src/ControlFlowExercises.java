@@ -95,22 +95,64 @@ public class ControlFlowExercises {
 //        3      | 9       | 27
 //        4      | 16      | 64
 //        5      | 25      | 125
-
+//
+//        Scanner scanner = new Scanner(System.in);
+//        int test = 0;
+//        while (test < 1){
+//
+//                System.out.println("Enter an integer: ");
+//                int input = scanner.nextInt();
+//                System.out.println("number | squared | cubed");
+//                System.out.println("------ | ------- | -----");
+//
+//                for(int i = 1; i <= input; i++){
+//                    long squared = i * i;
+//                    long cubed = i * i * i;
+//                    System.out.println( i + " | " + squared + " | " + cubed);
+//
+//                }
+//                scanner.nextLine();
+//                System.out.println("Would you like to continue? Enter Y or N:");
+//                String confirm = scanner.nextLine();
+//            if(confirm.equals("Y")){
+//                continue;
+//            }else{
+//                break;
+//            }
+//        }
+//        Convert given number grades into letter grades.
+//
+//                Prompt the user for a numerical grade from 0 to 100.
+//        Display the corresponding letter grade.
+//                Prompt the user to continue.
+//        Assume that the user will enter valid integers for the grades.
+//        The application should only continue if the user agrees to.
+//        Grade Ranges:
+//
+//        A : 100 - 88
+//        B : 87 - 80
+//        C : 79 - 67
+//        D : 66 - 60
+//        F : 59 - 0
         Scanner scanner = new Scanner(System.in);
         int test = 0;
         while (test < 1){
 
-                System.out.println("Enter an integer: ");
-                int input = scanner.nextInt();
-                System.out.println("number | squared | cubed");
-                System.out.println("------ | ------- | -----");
-
-                for(int i = 1; i <= input; i++){
-                    long squared = i * i;
-                    long cubed = i * i * i;
-                    System.out.println( i + " | " + squared + " | " + cubed);
-
+                System.out.println("Enter a numerical grade: ");
+                int grade = scanner.nextInt();
+                String letterGrade = "";
+                if (grade >= 0 && grade <= 59){
+                    letterGrade = "F";
+                }else if(grade >=60 && grade <=66){
+                    letterGrade = "D";
+                }else if(grade >= 67 && grade <= 79){
+                    letterGrade = "C";
+                }else if(grade >= 80 && grade <= 87){
+                    letterGrade = "B";
+                }else if(grade >=88){
+                    letterGrade = "A";
                 }
+                System.out.format("You entered a numerical grade of %d. The letter grade is %s. ", grade, letterGrade);
                 scanner.nextLine();
                 System.out.println("Would you like to continue? Enter Y or N:");
                 String confirm = scanner.nextLine();
@@ -120,6 +162,5 @@ public class ControlFlowExercises {
                 break;
             }
         }
-
     }
 }
