@@ -31,10 +31,27 @@ public class ControlFlowExercises {
 //        16
 //        256
 //        65536
-        long num = 2L;
-        do {
+//        long num = 2L;
+//        do {
+//            System.out.println(num);
+//            num *= num;
+//        }while (num < 1000000);
+//    }
+
+//        For
+//
+//        refactor the previous two exercises to use a for loop instead
+
+        for(int i = 5;i <= 15;i++){
+            System.out.print(i + " ");
+        }
+
+        for(long num = 2L; num < 1000000; num*=num){
             System.out.println(num);
-            num *= num;
-        }while (num < 1000000);
+    }
+
+
+
+
     }
 }
