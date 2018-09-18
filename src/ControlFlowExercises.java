@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
 
@@ -62,16 +63,63 @@ public class ControlFlowExercises {
 //        For numbers which are multiples of both three and five print “FizzBuzz”.
 
 
-        for(int i = 1; i <=100; i++){
-            if(i%3 == 0 & i%5 == 0){
-                System.out.println("FizzBuzz");
-            }else if(i%3 == 0){
-                System.out.println("Fizz");
-            }else if(i%5 == 0){
-                System.out.println("Buzz");
+//        for(int i = 1; i <=100; i++){
+//            if(i%3 == 0 & i%5 == 0){
+//                System.out.println("FizzBuzz");
+//            }else if(i%3 == 0){
+//                System.out.println("Fizz");
+//            }else if(i%5 == 0){
+//                System.out.println("Buzz");
+//            }else{
+//                System.out.println(i);
+//            }
+//        }
+
+//        Display a table of powers.
+//
+//                Prompt the user to enter an integer.
+//        Display a table of squares and cubes from 1 to the value entered.
+//        Ask if the user wants to continue.
+//        Assume that the user will enter valid data.
+//        Only continue if the user agrees to.
+//        Example Output
+//
+//        What number would you like to go up to? 5
+//
+//        Here is your table!
+//
+//                number | squared | cubed
+//                ------ | ------- | -----
+//                1      | 1       | 1
+//        2      | 4       | 8
+//        3      | 9       | 27
+//        4      | 16      | 64
+//        5      | 25      | 125
+
+        Scanner scanner = new Scanner(System.in);
+        int test = 0;
+        while (test < 1){
+
+                System.out.println("Enter an integer: ");
+                int input = scanner.nextInt();
+                System.out.println("number | squared | cubed");
+                System.out.println("------ | ------- | -----");
+
+                for(int i = 1; i <= input; i++){
+                    long squared = i * i;
+                    long cubed = i * i * i;
+                    System.out.println( i + " | " + squared + " | " + cubed);
+
+                }
+                scanner.nextLine();
+                System.out.println("Would you like to continue? Enter Y or N:");
+                String confirm = scanner.nextLine();
+            if(confirm.equals("Y")){
+                continue;
             }else{
-                System.out.println(i);
+                break;
             }
         }
+
     }
 }
