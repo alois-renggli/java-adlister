@@ -12,11 +12,29 @@ public class ControlFlowExercises {
 //        Your output should look like this:
 //
 //        5 6 7 8 9 10 11 12 13 14 15
-        int i = 5;
-        while (i <= 15){
-            System.out.print(i + " ");
-            i++;
-        }
-
+//        int i = 5;
+//        while (i <= 15){
+//            System.out.print(i + " ");
+//            i++;
+//        }
+//
+//    }
+//        Do While
+//
+//        Create a do-while loop that will count by 2's starting with 0 and ending at 100.
+//        Follow each number with a new line.
+//        Alter your loop to count backwards by 5's from 100 to -10.
+//        Create a do-while loop that starts at 2, and displays the number squared on each
+//        line while the number is less than 1,000,000. Output should equal:
+//        2
+//        4
+//        16
+//        256
+//        65536
+        long num = 2L;
+        do {
+            System.out.println(num);
+            num *= num;
+        }while (num < 1000000);
     }
 }
