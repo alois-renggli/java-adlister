@@ -3,7 +3,7 @@ public class ControlFlowExercises {
     public static void main(String[] args) {
 
 
-//        Loop Basics
+//        /////Loop Basics/////
 //
 //        While
 //
@@ -20,7 +20,7 @@ public class ControlFlowExercises {
 //        }
 //
 //    }
-//        Do While
+//        //////Do While/////
 //
 //        Create a do-while loop that will count by 2's starting with 0 and ending at 100.
 //        Follow each number with a new line.
@@ -39,7 +39,7 @@ public class ControlFlowExercises {
 //        }while (num < 1000000);
 //    }
 
-//        For
+//        /////For/////
 //
 //        refactor the previous two exercises to use a for loop instead
 
@@ -47,11 +47,11 @@ public class ControlFlowExercises {
 //            System.out.print(i + " ");
 //        }
 //
-//        for(long num = 2L; num < 1000000; num*=num){
+//        for(long num = 2; num < 1000000000; num*=num){
 //            System.out.println(num);
 //    }
 
-//        Fizzbuzz
+//        /////Fizzbuzz/////
 //
 //        One of the most common interview questions for entry-level programmers is
 // the FizzBuzz test. Developed by Imran Ghory,
@@ -75,7 +75,7 @@ public class ControlFlowExercises {
 //            }
 //        }
 
-//        Display a table of powers.
+//        /////Display a table of powers./////
 //
 //                Prompt the user to enter an integer.
 //        Display a table of squares and cubes from 1 to the value entered.
@@ -121,7 +121,9 @@ public class ControlFlowExercises {
 //                break;
 //            }
 //        }
-//        Convert given number grades into letter grades.
+
+
+//        //////Convert given number grades into letter grades.///////
 //
 //                Prompt the user for a numerical grade from 0 to 100.
 //        Display the corresponding letter grade.
@@ -135,33 +137,33 @@ public class ControlFlowExercises {
 //        C : 79 - 67
 //        D : 66 - 60
 //        F : 59 - 0
-        Scanner scanner = new Scanner(System.in);
-        int test = 0;
-        while (test < 1){
-
-                System.out.println("Enter a numerical grade: ");
-                int grade = scanner.nextInt();
-                String letterGrade = "";
-                if (grade >= 0 && grade <= 59){
-                    letterGrade = "F";
-                }else if(grade >=60 && grade <=66){
-                    letterGrade = "D";
-                }else if(grade >= 67 && grade <= 79){
-                    letterGrade = "C";
-                }else if(grade >= 80 && grade <= 87){
-                    letterGrade = "B";
-                }else if(grade >=88){
-                    letterGrade = "A";
-                }
-                System.out.format("You entered a numerical grade of %d. The letter grade is %s. ", grade, letterGrade);
-                scanner.nextLine();
-                System.out.println("Would you like to continue? Enter Y or N:");
-                String confirm = scanner.nextLine();
-            if(confirm.equalsIgnoreCase("Y")){
-                continue;
-            }else{
-                break;
-            }
-        }
+//        Scanner scanner = new Scanner(System.in);
+//        int test = 0;
+//        while (test < 1){
+//
+//                System.out.println("Enter a numerical grade: ");
+//                int grade = scanner.nextInt();
+//                String letterGrade = "";
+//                if (grade >= 0 && grade <= 59){
+//                    letterGrade = "F";
+//                }else if(grade >=60 && grade <=66){
+//                    letterGrade = "D";
+//                }else if(grade >= 67 && grade <= 79){
+//                    letterGrade = "C";
+//                }else if(grade >= 80 && grade <= 87){
+//                    letterGrade = "B";
+//                }else if(grade >=88){
+//                    letterGrade = "A";
+//                }
+//                System.out.format("You entered a numerical grade of %d. The letter grade is %s. ", grade, letterGrade);
+//                scanner.nextLine();
+//                System.out.println("Would you like to continue? Enter Y or N:");
+//                String confirm = scanner.nextLine();
+//            if(confirm.equalsIgnoreCase("Y")){
+//                continue;
+//            }else{
+//                break;
+//            }
+//        }
     }
 }
