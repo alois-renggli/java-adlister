@@ -96,31 +96,31 @@ public class ControlFlowExercises {
 //        4      | 16      | 64
 //        5      | 25      | 125
 //
-//        Scanner scanner = new Scanner(System.in);
-//        int test = 0;
-//        while (test < 1){
-//
-//            System.out.println("Enter an integer: ");
-//            int input = scanner.nextInt();
-//            System.out.println("number | squared | cubed");
-//            System.out.println("------ | ------- | -----");
-//
-//            for(int i = 1; i <= input; i++){
-//                double squared = i * i;
-//                double cubed = i * i * i;
-//                System.out.printf( "%-6d |%-9.2f|1000%-7.2f%n", i, squared, cubed);
-//            }
-//
-//            scanner.nextLine();
-//
-//            System.out.println("Would you like to continue? Enter Y or N:");
-//            String confirm = scanner.nextLine();
-//            if(confirm.equalsIgnoreCase("Y")){
-//                continue;
-//            }else{
-//                break;
-//            }
-//        }
+        Scanner scanner = new Scanner(System.in);
+        int test = 0;
+        while (test < 1){
+
+            System.out.println("Enter an integer: ");
+            int input = scanner.nextInt();
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+
+            for(long i = 1; i <= input; i++){
+                double squared = i * i;
+                double cubed = i * i * i;
+                System.out.printf( "%-6d |%-9.2f|1000%-7.2f%n", i, squared, cubed);
+            }
+
+            scanner.nextLine();
+
+            System.out.println("Would you like to continue? Enter Y or N:");
+            String confirm = scanner.nextLine();
+            if(confirm.equalsIgnoreCase("Y")){
+                continue;
+            }else{
+                break;
+            }
+        }
 
 
 //        //////Convert given number grades into letter grades.///////
