@@ -38,24 +38,24 @@ public class HighLow {
 
     public static int numberGuess (int randomNum){
         System.out.println(randomNum);
-        int number = confirmGuess();
+        int number = 0;
         System.out.println();
-        if (number == randomNum){
-            System.out.println("Good Guess!");
-            return 1;
-        }else{
-            while(number != randomNum){
+        while(number != randomNum){
+                number = confirmGuess();
+                System.out.println();
                 if(number > randomNum){
                     System.out.println("LOWER");
-                    numberGuess(randomNum);
+//                    numberGuess(randomNum);
                 }
                 else if(number < randomNum){
                     System.out.println("HIGHER");
-                    numberGuess(randomNum);
+//                    numberGuess(randomNum);
                 }
             }
+            if (number == randomNum){
+        System.out.println("Good Guess!");
         }
-        return 1;
+        return number;
     }
 
 
