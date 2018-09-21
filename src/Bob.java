@@ -26,6 +26,26 @@ public class Bob {
             }else{
                 System.out.println("Whatever.");
             }
+//            int lastCharInt = input.length();
+//            char lastChar =  input.charAt(lastCharInt);
+//            switch (lastChar){
+//                case "!":
+//                    System.out.println("Whoa, chill out!");
+//                    break;
+//                case "!":
+//                    System.out.println("Whoa, chill out!");
+//                    break;
+//                case "?":
+//                    System.out.println("Whoa, chill out!");
+//                    break;
+//                case 0:
+//                    System.out.println("Whoa, chill out!");
+//                    break;
+//                 default:
+//                     System.out.println("Whatever.");
+//                     break;
+////
+//            }
         }
     }
 }

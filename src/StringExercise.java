@@ -2,10 +2,10 @@ import java.sql.SQLOutput;
 
 public class StringExercise {
     public static void main(String[] args) {
-        String education = "We don't need no education";
-        String control = "We don't need no thought control";
+        String education = "We don't need no education\nWe don't need no thought control";
+//        String control = "We don't need no thought control";
         System.out.println(education);
-        System.out.println(control);
+//        System.out.println(control);
 
         String checkOut = "Check \"this\" out!, \"s inside of \"s!";
         System.out.println(checkOut);
