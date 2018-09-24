@@ -40,8 +40,8 @@ public class Input {
 
 //    new Scanner(System.in);
 
-    String getString() {
-        System.out.println("Enter a string:");
+    public String getString() {
+//        System.out.println("Enter a string:");
         return scanner.nextLine();
     }
     boolean yesNo(){

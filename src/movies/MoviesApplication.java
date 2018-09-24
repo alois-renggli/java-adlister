@@ -27,6 +27,16 @@ public class MoviesApplication {
 //    Pulp Fiction -- drama
 //...
 
+
+    public static Movie[] addMovie(Movie[] movieList, Movie newMovie){
+        Movie[] updatedMovie = new Movie[movieList.length +1];
+        for(int i = 0; i <updatedMovie.length-1; i++){
+            updatedMovie[i] = movieList[i];
+        }
+        updatedMovie[updatedMovie.length-1] = newMovie;
+        return updatedMovie;
+    }
+
     public static void main(String[] args) {
         Boolean run = true;
         while (run = true) {
@@ -37,9 +47,11 @@ public class MoviesApplication {
             System.out.println("3 - View Movies in the Drama Category");
             System.out.println("4 - View Movies in the Horror Category");
             System.out.println("5 - View Movies in the SciFi Category");
+            System.out.println("6 - Add a Movie to the List:");
+
 //            System.out.println("Enter your choice: ");
             Input input = new Input();
-            int selection = input.getInt(0, 5);
+            int selection = input.getInt(0, 6);
             MoviesArray list = new MoviesArray();
 //            String[] listArray = list.findAll();
 //            System.out.println(list.findAll());
@@ -76,8 +88,15 @@ public class MoviesApplication {
             } else if (selection == 0) {
                 System.out.println("Thank you for using the MovieApplication. Good Bye!");
                 break;
-            }
+            } else if (selection == 6) {
+                System.out.println("Enter the movie name:");
+                String movieName = input.getString();
+                System.out.println("Enter the movie category (i.e. horror, scifi, comedy):");
+                String movieCategory = input.getString();
+                Movie newMovie = new Movie(movieName, movieCategory);
+                addMovie(movieList, newMovie);
 
+            }
         }
     }
 }
