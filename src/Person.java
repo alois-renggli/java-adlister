@@ -25,8 +25,8 @@ public class Person {
     }
 
     public static void main(String[] args) {
-//        Person louie = new Person("Louie");
-//        System.out.println(louie.name);
+        Person louie = new Person("Louie");
+        System.out.println(louie.name);
 //        Person person1 = new Person("John");
 //        Person person2 = new Person("John");
 //        System.out.println(person1.getName().equals(person2.getName()));

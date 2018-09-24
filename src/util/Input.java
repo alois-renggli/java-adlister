@@ -55,7 +55,7 @@ public class Input {
         }
 
     }
-    int getInt(int min, int max){
+    public int getInt(int min, int max){
         System.out.printf("Enter a number from %s to %s:\n", min, max);
         int input = scanner.nextInt();
         if (input > max || input < min){
