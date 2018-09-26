@@ -1,4 +1,5 @@
 package shapes;
+import org.w3c.dom.css.Rect;
 import util.Input;
 
 public class CircleApp {
@@ -16,6 +17,7 @@ public class CircleApp {
         System.out.println("The radius is " + inputValue);
         System.out.printf("The area is %.2f\n", test.getArea());
         System.out.printf("The circumference is %.2f\n", test.getCircumference());
+
     }
 
 }
