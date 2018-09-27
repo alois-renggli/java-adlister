@@ -1,8 +1,18 @@
-//package SandBox;
-//import java.util.ArrayList;
-//import java.util.HashMap;
-//
-//public class Pets {
+package SandBox;
+import java.util.ArrayList;
+import java.util.HashMap;
+import util.Input;
+
+public class Pets {
+
+    public static void main(String[] args) {
+        Input input = new Input();
+
+//        input.getInt();
+
+        input.getDouble();
+    }
+
 //	private String type;
 //	private ArrayList<HashMap> pet;
 //	private HashMap<String, String> breed;
@@ -35,5 +45,5 @@
 //	public static void main(String[] arg){
 //			System.out.println("Test");
 //	}
-//
-//}
+
+}

@@ -44,6 +44,8 @@ public class Input {
 //        System.out.println("Enter a string:");
         return scanner.nextLine();
     }
+
+
     boolean yesNo(){
         System.out.println("Confirm Yes or No:");
         String input = scanner.nextLine();
@@ -55,6 +57,8 @@ public class Input {
         }
 
     }
+
+
     public int getInt(int min, int max){
         System.out.printf("Enter a number from %s to %s:\n", min, max);
         int input = scanner.nextInt();
@@ -67,12 +71,24 @@ public class Input {
             return input;
         }
     }
+
+
     public int getInt(){
-        System.out.printf("Enter a number:\n");
-        int input = scanner.nextInt();
-        System.out.printf("You entered %s!\n", input);
-        return input;
+//        try {
+            System.out.printf("Enter a number:\n");
+            String s = scanner.nextLine();
+            System.out.printf("You entered %s!\n", s);
+            return Integer.valueOf(String s);
+//        }
+//        catch (InputMismatchException e) {
+//            System.out.println("Uh oh, something went wrong: " + e.getMessage());
+////            System.out.println("Here is some more detail:");
+////            e.printStackTrace();
+//            return 0;
+//        }
     }
+
+
     double getDouble(double min, double max){
         System.out.printf("Enter a number from %s to %s:\n", min, max);
         double input = scanner.nextInt();
@@ -82,13 +98,23 @@ public class Input {
         }
         else{
             System.out.printf("You entered %s!", input);
-            return input;
+            return 0;
         }
     }
-    double getDouble(){
-        System.out.printf("Enter a number:\n");
-        double input = scanner.nextInt();
-        System.out.printf("You entered %s!", input);
-        return input;
+
+
+    public double getDouble(){
+        try{
+            System.out.printf("Enter a number:\n");
+            double s = scanner.nextInt();
+            System.out.printf("You entered %s!", s);
+            return Integer.valueOf(String s);
+        }
+        catch(NumberFormatException e){
+            System.out.println("Uh oh, something went wrong: " + e.getMessage());
+//            System.out.println("Here is some more detail:");
+//            e.printStackTrace();
+            return 0;
+        }
     }
 }
