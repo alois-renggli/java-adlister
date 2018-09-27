@@ -18,22 +18,48 @@ public class GradesApplication {
 
             HashMap<String, Student> students = new HashMap<>();
             Input input = new Input();
+
             Student louie = new Student("louie");
             louie.addGrade(90);
             louie.addGrade(90);
             louie.addGrade(90);
+            louie.recordAttendance("2018-07-23", "P");
+            louie.recordAttendance("2018-07-24", "A");
+            louie.recordAttendance("2018-07-25", "P");
+            louie.recordAttendance("2018-07-26", "P");
+            louie.recordAttendance("2018-07-27", "P");
+
             Student isa = new Student("isa");
             isa.addGrade(95);
             isa.addGrade(90);
             isa.addGrade(100);
+            isa.recordAttendance("2018-07-23", "P");
+            isa.recordAttendance("2018-07-24", "P");
+            isa.recordAttendance("2018-07-25", "P");
+            isa.recordAttendance("2018-07-26", "P");
+            isa.recordAttendance("2018-07-27", "P");
+
             Student isiah = new Student("isiah");
             isiah.addGrade(65);
             isiah.addGrade(75);
             isiah.addGrade(70);
+            isiah.recordAttendance("2018-07-23", "A");
+            isiah.recordAttendance("2018-07-24", "A");
+            isiah.recordAttendance("2018-07-25", "A");
+            isiah.recordAttendance("2018-07-26", "P");
+            isiah.recordAttendance("2018-07-27", "A");
+
+
             Student alois = new Student ("alois");
             alois.addGrade(80);
             alois.addGrade(70);
             alois.addGrade(60);
+            alois.recordAttendance("2018-07-23", "A");
+            alois.recordAttendance("2018-07-24", "A");
+            alois.recordAttendance("2018-07-25", "A");
+            alois.recordAttendance("2018-07-26", "A");
+            alois.recordAttendance("2018-07-27", "A");
+
 //            System.out.println(isiah.getGradeAverage());
 
             students.put("alois@github.com", alois);
@@ -62,9 +88,16 @@ public class GradesApplication {
                     students.forEach((k,v) -> {
 //                        System.out.println(k);
                         if(k.contains(username)) {
-                            System.out.println("\nName: " + v.getName() + "\nGitHub Username " +
-                                    k + "\nGrade Average: " + v.getGradeAverage());
+                            System.out.println(
+                            "\nName: " + v.getName()
+                            + "\nGitHub Username " + k
+                            + "\nGrade Average: " + v.getGradeAverage()
+                                    + "\nAttendance Average: " +v.getAttendanceAverage()
+                            + "\nAbsent Days: "
+                            );
+                            v.absentDays();
                         }
+
                     });
 
                     System.out.println("\nWould you like to see another student?\n");

@@ -1,10 +1,13 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Student {
     private String name;
     private ArrayList<Integer> grades;
+    private HashMap<String, String> attendance;
 
 //    Create a Student class
 //
@@ -31,6 +34,7 @@ public class Student {
     public Student(String name) {
         this.name = name;
         this.grades = new ArrayList<>();
+        this.attendance = new HashMap<>();
     }
 
     // returns the student's name
@@ -44,26 +48,76 @@ public class Student {
     };
     // returns the average of the students grades
     public double getGradeAverage(){
-        int total = 0;
-        for(int grade: grades){
+        double total = 0;
+        for(double grade: grades){
             total += grade;
         }
         return total / grades.size();
     };
 
-//    public static void main(String[] args) {
+    public String recordAttendance(String date, String value){
+//        this.attendance.keySet(date);
+        if(value.equals("A") || value.equals("P")){
+            return this.attendance.put(date, value);
+        }else {
+            System.out.println("Invalid Entry. Check your attendance input...");
+            return "Invalid";
+        }
+    };
 
-//            grades.add(90);
-//            grades.add(80);
-//            grades.add(70);
+    public HashMap<String, String> getAttendance() {
+        return attendance;
+    };
+
+    public String absentDays(){
+        attendance.forEach((k,v) -> {
+            if( v.equals("A")){
+                System.out.println("Date: " + k);
+        };
+    });
+        return "Absent";
+    };
+
+//    public double getAttendanceAverage(){
+//        AtomicReference<Double> num = new AtomicReference<>((double) 0);
+//        attendance.entrySet().forEach(entry -> {
+//            if( entry.equals("A")){
+//                num.updateAndGet(v -> new Double((double) (v + 1)));
+//            };
+//        });
+//        return num.get();
+//    };
+
+        public double getAttendanceAverage(){
+            final double[] count = {0};
+        attendance.forEach((k,v) -> {
+            if(v.contains("A")){
+                count[0] += 1;
+            }
+        });
+//        attendance.compute(date, (k,v) -> (v.contains("A") ? (count+=1):(count+=0));
+//        map.compute(key, (k, v) -> (v == null) ? msg : v.concat(msg))
+
+        return (attendance.size() - count[0])/attendance.size() *100;
+    };
+
+//    Add an attendance property to your Student objects. It should be a HashMap.
+// The keys should be strings representing the date, in the format "2017-10-02",
+// and the values should be Strings that are one of:
 //
-//        System.out.println(grades);
-//        System.out.println(getGradeAverage());
-//        Student louie = new Student("louie");
-//        louie.addGrade(90);
-//        louie.addGrade(90);
-//        louie.addGrade(98);
-//        System.out.println(louie.getGradeAverage());
-//}
+//            "A": Absent
+//"P": Present
+//
+//    Add a method named recordAttendance(String date, String value)
+// that adds records to the HashMap this method should make sure value is
+// an an acceptable string
+//
+//    Create an instance method on your Student class to calculate a student's
+// attendance percentage -- (Total Days - Absences) / Total Days
+//    Add the attendance information to the output of your command line
+// interface, this should require only a small change
+//    Create an instance method on Student that finds the specific days a
+// student was absent. This method should return a List of Strings, where each
+// string is the date of the absence
 
 }
