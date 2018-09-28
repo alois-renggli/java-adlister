@@ -74,18 +74,18 @@ public class Input {
 
 
     public int getInt(){
-//        try {
+        try {
             System.out.printf("Enter a number:\n");
-            String s = scanner.nextLine();
-            System.out.printf("You entered %s!\n", s);
-            return Integer.valueOf(String s);
-//        }
-//        catch (InputMismatchException e) {
-//            System.out.println("Uh oh, something went wrong: " + e.getMessage());
-////            System.out.println("Here is some more detail:");
-////            e.printStackTrace();
-//            return 0;
-//        }
+            String input = scanner.nextLine();
+            System.out.printf("You entered %s!\n", input);
+            return Integer.valueOf(input);
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Uh oh, something went wrong: " + e.getMessage());
+//            System.out.println("Here is some more detail:");
+//            e.printStackTrace();
+            return getInt();
+        }
     }
 
 
@@ -106,15 +106,15 @@ public class Input {
     public double getDouble(){
         try{
             System.out.printf("Enter a number:\n");
-            double s = scanner.nextInt();
-            System.out.printf("You entered %s!", s);
-            return Integer.valueOf(String s);
+            String input = scanner.nextLine();
+            System.out.printf("You entered %s!", input);
+            return Integer.valueOf(input);
         }
         catch(NumberFormatException e){
             System.out.println("Uh oh, something went wrong: " + e.getMessage());
 //            System.out.println("Here is some more detail:");
 //            e.printStackTrace();
-            return 0;
+            return getDouble();
         }
     }
 }
