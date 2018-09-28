@@ -59,15 +59,15 @@ public class Input {
     }
 
 
-    public int getInt(int min, int max){
-        System.out.printf("Enter a number from %s to %s:\n", min, max);
-        int input = scanner.nextInt();
+    public long getInt(long min, long max){
+//        System.out.printf("Enter a number from %s to %s:\n", min, max);
+        long input = scanner.nextInt();
         if (input > max || input < min){
             System.out.println("Invalid entry! Input another number");
             return getInt(min, max);
         }
         else{
-            System.out.printf("You entered %s!\n", input);
+//            System.out.printf("You entered %s!\n", input);
             return input;
         }
     }
@@ -75,9 +75,9 @@ public class Input {
 
     public int getInt(){
         try {
-            System.out.printf("Enter a number:\n");
+//            System.out.printf("Enter a number:\n");
             String input = scanner.nextLine();
-            System.out.printf("You entered %s!\n", input);
+//            System.out.printf("You entered %s!\n", input);
             return Integer.valueOf(input);
         }
         catch (NumberFormatException e) {
@@ -107,7 +107,7 @@ public class Input {
         try{
             System.out.printf("Enter a number:\n");
             String input = scanner.nextLine();
-            System.out.printf("You entered %s!", input);
+//            System.out.printf("You entered %s!", input);
             return Integer.valueOf(input);
         }
         catch(NumberFormatException e){

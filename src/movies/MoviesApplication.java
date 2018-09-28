@@ -51,7 +51,7 @@ public class MoviesApplication {
 
 //            System.out.println("Enter your choice: ");
             Input input = new Input();
-            int selection = input.getInt(0, 6);
+            long selection = input.getInt(0, 6);
             MoviesArray list = new MoviesArray();
 //            String[] listArray = list.findAll();
 //            System.out.println(list.findAll());
