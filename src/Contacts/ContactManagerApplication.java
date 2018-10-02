@@ -27,18 +27,18 @@ public class ContactManagerApplication {
 
             try{
 
-//                if (Files.notExists(dataDirectory)) {
-//                    Files.createDirectories(dataDirectory);
-//                }
-//
-//                if (! Files.exists(dataFile)) {
-//                    Files.createFile(dataFile);
-//                }
-                Path contactRoster = Paths.get("./data/", "contacts.txt");
-                Files.readAllLines(contactRoster);
-//                for (int i = 0; i < contactRoster.size(); i += 1) {
-//                    System.out.println((i + 1) + ": " + contactRoster.get(i));
-//                }
+                if (Files.notExists(dataDirectory)) {
+                    Files.createDirectories(dataDirectory);
+                }
+
+                if (! Files.exists(dataFile)) {
+                    Files.createFile(dataFile);
+                }
+                Path contactsPath = Paths.get("./data/", "contacts.txt");
+                List<String> contactList = Files.readAllLines(contactsPath);
+                for (int i = 0; i < contactList.size(); i += 1) {
+                    System.out.println((i + 1) + ": " + contactList.get(i));
+                }
 
             }
             catch (Exception e){
@@ -56,16 +56,18 @@ public class ContactManagerApplication {
             int option = input.getInt();
             if(option == 1){
                 System.out.println("View contacts.\n");
-                Path contactRoster = Paths.get(".", "contacts.txt");
+                System.out.println("Name       | Phone number |\n"+"---------------------------\n");
+                Path contactsList = Paths.get("./data/", "contacts.txt");
 
-                Files.readAllLines(contactRoster);
+                System.out.println(Files.readAllLines(contactsList));
+//                System.out.println(contactRoster);
 //
-//                for (int i = 0; i < contactRoster.size(); i += 1) {
-//                    System.out.println((i + 1) + ": " + contactRoster.get(i));
+//                for (int i = 0; i < contactsList.size(); i += 1) {
+//                    System.out.println((i + 1) + ": " + contactsList.get(i));
 //                }
 //                Files.write(contactRoster, contacts);
             }
-            else if(option ==2){
+            else if(option == 2){
 
                 System.out.println("\nYou have chosen to enter a new contact to your roster!\n");
                 System.out.println("Enter the name of your contact:\n");
@@ -81,8 +83,10 @@ public class ContactManagerApplication {
 //                System.out.println();
 //                Path contactRoster = Paths.get("./data/", "contacts.txt");
 //                Path file = Files.createFile(contactRoster);
+//                Path contactRoster = Paths.get("./data/", "contacts.txt");
 
-//                Files.write(file, contacts);
+//                System.out.println(Files.readAllLines(contactRoster));
+//                Files.write(Paths.get("./data/", "contacts.txt"), Arrays.listOf(newContact), StandardOpenOption.APPEND);
 
 
             }
