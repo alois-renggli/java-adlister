@@ -17,7 +17,7 @@
 <jsp:include page="partials/navbar.jsp"/>
 <h1 class="font-weight-bold font-italic text-center">LOGIN PAGE</h1>
 
-<form class="p-4 col-4 offset-4 border" method="GET" action="/login.jsp">
+<form class="p-4 col-4 offset-4 border" method="POST" action="/login.jsp">
     <div class="form-group">
         <label for="username">Username:</label>
         <input type="username" class="form-control" id="username" placeholder="Username" name="username">
