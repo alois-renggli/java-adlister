@@ -51,6 +51,7 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+//        return null;
     }
 
     private String createInsertQuery(Ad ad) {
