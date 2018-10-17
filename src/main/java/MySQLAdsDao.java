@@ -25,14 +25,15 @@ public class MySQLAdsDao implements Ads{
 
     @Override
     public List<Ad> all() {
-        String query = "SELECT * FROM ads";
+        String query = "SELECT * FROM ads;";
         List<Ad> ads = new ArrayList<>();
         try{
             Statement stmt = connection.createStatement();
-            ResultSet rs = (stmt).executeQuery(query);
+            ResultSet rs = stmt.executeQuery(query);
             while(rs.next()){
                 ads.add(createAdObject(rs));
             }
+            return ads;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -54,10 +55,10 @@ public class MySQLAdsDao implements Ads{
     @Override
     public Long insert(Ad ad) {
         String query = String.format("INSERT INTO ads(user_id, title, description) " +
-                "values('%s','%s','%s')",ad.getUserId(), ad.getTitle(), ad.getDescription());
+                "values('%s','%s','%s');",ad.getUserId(), ad.getTitle(), ad.getDescription());
         try {
             Statement stmt = connection.createStatement();
-            stmt.executeUpdate( query, Statement.RETURN_GENERATED_KEYS);
+            stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stmt.getGeneratedKeys();
             if (rs.next()) {
                 System.out.println("Inserted a new record! New id: " + rs.getLong(1));
